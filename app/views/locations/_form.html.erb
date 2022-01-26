@@ -1,7 +1,7 @@
-<%= simple_form_for(model: location) do |form| %>
+<%= simple_form_for(location) do |form| %>
+    <%= form.input :photos, as: :file, input_html: { multiple: true } %>
 
   <% if location.errors.any? %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
     <div style="color: red">
       <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
