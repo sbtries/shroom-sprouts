@@ -1,6 +1,11 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: %i[ show edit update destroy ]
 
+
+  def location_params
+    params.require(:article).permit(:title, :body, photos: [])
+  end
+
   # GET /locations or /locations.json
   def index
     @locations = Location.all
